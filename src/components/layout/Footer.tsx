@@ -131,7 +131,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 py-8">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
             <div className="text-primary-foreground/80 text-sm">
-              © {currentYear} Swanberg Kuwait. All rights reserved. Developed my Miqdad +965 41103254
+              © {currentYear} Swanberg Kuwait. All rights reserved. Developed By Miqdad +965 41103254
             </div>
             <div className="flex flex-wrap gap-6">
               {legal.map((item) => (
