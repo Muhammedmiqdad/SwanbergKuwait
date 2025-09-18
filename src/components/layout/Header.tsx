@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logo from '@/assets/logo.jpg'; // <-- client logo
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,39 +20,42 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container-width">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <NavLink to="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">S</span>
-            </div>
-            <div>
-              <div className="text-xl font-bold text-foreground">Swanberg Kuwait</div>
-              <div className="text-sm text-muted-foreground">Heavy Equipment & Logistics</div>
-            </div>
+          {/* Logo with tagline */}
+          <NavLink to="/" className="flex flex-col items-center space-y-1">
+            <img
+              src={logo}
+              alt="Swanberg Kuwait Logo"
+              className="h-14 w-auto object-contain"
+            />
+            <div className="text-sm text-muted-foreground">Heavy Equipment & Logistics</div>
           </NavLink>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <NavLink 
-              to="/" 
-              className={({ isActive }) => 
-                `text-sm font-medium transition-colors ${isActive ? 'text-primary' : 'text-foreground hover:text-primary'}`
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `text-sm font-medium transition-colors ${
+                  isActive ? 'text-primary' : 'text-foreground hover:text-primary'
+                }`
               }
             >
               Home
             </NavLink>
-            
-            <NavLink 
-              to="/about" 
-              className={({ isActive }) => 
-                `text-sm font-medium transition-colors ${isActive ? 'text-primary' : 'text-foreground hover:text-primary'}`
+
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `text-sm font-medium transition-colors ${
+                  isActive ? 'text-primary' : 'text-foreground hover:text-primary'
+                }`
               }
             >
               About Us
             </NavLink>
 
             {/* Services Dropdown */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
@@ -60,7 +64,7 @@ const Header = () => {
                 <span>Services</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
-              
+
               {isServicesOpen && (
                 <div className="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded-xl shadow-lg py-2 z-50">
                   {services.map((service) => (
@@ -76,37 +80,45 @@ const Header = () => {
               )}
             </div>
 
-            <NavLink 
-              to="/projects" 
-              className={({ isActive }) => 
-                `text-sm font-medium transition-colors ${isActive ? 'text-primary' : 'text-foreground hover:text-primary'}`
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                `text-sm font-medium transition-colors ${
+                  isActive ? 'text-primary' : 'text-foreground hover:text-primary'
+                }`
               }
             >
               Projects
             </NavLink>
 
-            <NavLink 
-              to="/blog" 
-              className={({ isActive }) => 
-                `text-sm font-medium transition-colors ${isActive ? 'text-primary' : 'text-foreground hover:text-primary'}`
+            <NavLink
+              to="/blog"
+              className={({ isActive }) =>
+                `text-sm font-medium transition-colors ${
+                  isActive ? 'text-primary' : 'text-foreground hover:text-primary'
+                }`
               }
             >
               News
             </NavLink>
 
-            <NavLink 
-              to="/careers" 
-              className={({ isActive }) => 
-                `text-sm font-medium transition-colors ${isActive ? 'text-primary' : 'text-foreground hover:text-primary'}`
+            <NavLink
+              to="/careers"
+              className={({ isActive }) =>
+                `text-sm font-medium transition-colors ${
+                  isActive ? 'text-primary' : 'text-foreground hover:text-primary'
+                }`
               }
             >
               Careers
             </NavLink>
 
-            <NavLink 
-              to="/contact" 
-              className={({ isActive }) => 
-                `text-sm font-medium transition-colors ${isActive ? 'text-primary' : 'text-foreground hover:text-primary'}`
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                `text-sm font-medium transition-colors ${
+                  isActive ? 'text-primary' : 'text-foreground hover:text-primary'
+                }`
               }
             >
               Contact

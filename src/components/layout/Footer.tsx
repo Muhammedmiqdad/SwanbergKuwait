@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
+import logo from '@/assets/logo.jpg'; // <-- client logo
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -33,20 +34,21 @@ const Footer = () => {
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-xl">S</span>
-              </div>
-              <div>
-                <div className="text-xl font-bold">Swanberg Kuwait</div>
-                <div className="text-sm text-primary-foreground/80">Heavy Equipment & Logistics</div>
+            <div className="flex flex-col items-center mb-6">
+              <img
+                src={logo}
+                alt="Swanberg Kuwait Logo"
+                className="h-16 w-auto object-contain mb-2"
+              />
+              <div className="text-sm text-primary-foreground/80">
+                Heavy Equipment & Logistics
               </div>
             </div>
-            <p className="text-primary-foreground/80 mb-6 leading-relaxed">
+            <p className="text-primary-foreground/80 mb-6 leading-relaxed text-center lg:text-left">
               Leading provider of heavy equipment services, rig moves, and petroleum logistics 
               solutions in Kuwait and the GCC region.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex justify-center lg:justify-start space-x-4">
               <a href="#" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
