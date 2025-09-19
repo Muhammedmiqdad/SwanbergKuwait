@@ -1,3 +1,3 @@
 # Project info
 
-**URL**: swanbergkuwait.netlify.app
+**URL**: https://swanbergkuwait.netlify.app
